@@ -1,0 +1,35 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+import java.util.ArrayList;
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        // ArrayList<String> fruits = new ArrayList<>();
+        // fruits.add("apple");
+        // fruits.add("banana");
+        // fruits.add("grape");
+        // fruits.add("mango");
+        
+        // System.out.println(fruits.size());
+        // System.out.println(fruits.toString());
+        // Collections.reverse(fruits);
+        // System.out.println(fruits.toString());
+        
+        ArrayList<Integer> arr=new ArrayList<>();
+        arr.add(60);
+        arr.add(20);
+        arr.add(10);
+        arr.add(40);
+        
+        // System.out.println(fruits.size());
+        System.out.println(arr.toString());
+        Collections.reverse(arr);
+        System.out.println(arr.toString());
+        
+        
+
+        
+        
+    }
+}
