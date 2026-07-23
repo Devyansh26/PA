@@ -1,0 +1,29 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static int solve(int[] arr , int k){
+        
+        int left=0;
+
+        int sum=0;
+        int count=0;
+        
+        for(int r=0;r<arr.length;r++){
+            sum+=arr[r];
+            while(sum>k){
+                sum-=arr[left];
+                left++;
+            }
+            count+=(r - left +1);
+        }
+        return count;
+    }
+    
+    public static void main(String[] args) {
+        int[] arr={1,1,1,1,1};
+        int k=3;
+        
+        System.out.println(solve(arr,k));
+    }
+}
