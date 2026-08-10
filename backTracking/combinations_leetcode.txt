@@ -1,0 +1,25 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static List<List<Integer>> ans= new ArrayList<>();
+    public static void solve(int start,List<Integer> arr,int n, int k) {
+        if(arr.size() == k) {
+            ans.add(new ArrayList<>(arr));
+        }
+        
+        for(int i=start;i<=n;i++){
+            arr.add(i);
+            solve(i+1,arr,n,k);
+            arr.remove(arr.size() -1);
+        }
+    }
+    public static void main(String[] args) {
+        int n=4;
+        int k=2;
+        
+        List<Integer> arr = new ArrayList<>();
+        solve(1,arr,n,k);
+        System.out.println(ans);
+    }
+}

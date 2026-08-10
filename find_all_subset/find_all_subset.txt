@@ -1,0 +1,28 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+import java.util.*;
+class Main {
+    public static List<List<Integer>> res = new ArrayList<>();
+    public static void subset(int[] arr,List<Integer> temp,int i){
+        if(i>=arr.length){
+            res.add(new ArrayList<>(temp));
+            return ;
+        }
+        
+        temp.add(arr[i]);
+        subset(arr,temp,i+1);
+        
+        temp.remove(temp.size() -1);
+        subset(arr,temp,i+1);
+    }
+    
+    public static void main(String[] args) {
+        System.out.println("Start small. Ship something.");
+        int[] arr={1,2,3};
+        List<Integer> temp = new ArrayList<>();
+        
+        subset(arr,temp,0);
+        
+        System.out.println(res);
+    }
+}s
