@@ -1,0 +1,50 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+
+class Main {
+    public static void main(String[] args) {
+        // int[] pages={100,200,50,12,200,500};
+        // int maxPages=0;
+        // int count=0;
+        // int k=3;
+        
+        // for(int i=0;i<k;i++){
+        //     count+=pages[i];
+        // }
+        // maxPages=count;
+        // for(int i=k;i<pages.length;i++){
+        //     count-=pages[i-k];
+        //     count+=pages[i];
+        //     maxPages=Math.max(maxPages,count);
+        // }
+        // System.out.println(maxPages);
+        
+        // System.out.println("before exception");
+        // try{
+        //     int a=10/0;
+        // }
+        // catch(ArrayIndexOutOfBoundsException e1){
+        //     System.out.println("From catch1");
+        // }
+        // catch(ArithmeticException e){
+        //     System.out.println("from catch2");
+        // }
+        // finally{
+        //     System.out.println("byy");
+        // }
+        
+        // System.out.println("after exception");
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}

@@ -33,3 +33,8 @@ class Main {
         
     }
 }
+
+array vs numpy array
+compiler
+Syntactic and semantic analysis
+opencv

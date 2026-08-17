@@ -1,0 +1,90 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Node {
+    int data;
+    Node next;
+
+    Node(int d) {
+        this.data = d;
+        this.next = null;
+    }
+}
+class Main {
+    public static void Print(Node root) {
+        if(root == null ) return ;
+        while(root!=null) {
+            System.out.print(root.data +" ");
+            root = root.next;
+        }
+    }
+    public static int countNodes(Node root) {
+        if(root == null) return 0;
+        int count = 0;
+
+        while(root!= null) {
+            count++;
+            root=root.next;
+        }
+        return count;
+    }
+
+    public static boolean search(Node root, int target) {
+        if(root == null){
+            return false;
+        }
+        while(root!=null){
+            if(root.data == target ) {
+                return true;
+            }
+            root=root.next;
+        }
+        return false;
+    }
+
+    public static int findmid(Node root) {
+        Node slow=root;
+        Node fast=root;
+
+        while(fast!=null && fast.next != null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow.data;
+    }
+
+    public static Node reverse(Node head) {
+        Node prev= null;
+        Node curr = head;
+
+        while(curr!=null){
+            Node next = curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        return prev;
+    }
+    public static void main(String[] args) {
+        Node head = new Node(5);
+        Node temp = head;
+        for(int i=4;i>=0;i--) {
+            temp.next = new Node(i);
+            temp=temp.next;
+        }
+        Print(head);
+        System.out.println();
+        System.out.println(countNodes(head));
+
+        System.out.println(search(head,2));
+        System.out.println(search(head,6));
+
+
+        System.out.println(findmid(head));
+
+        head = reverse(head);
+        Print(head);
+    }
+}
+
+
+
