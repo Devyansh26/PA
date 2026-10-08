@@ -1,0 +1,32 @@
+import java.util.*;
+
+public class Main{
+  public static void main(String[] args){
+    Average a = new Average(1);
+  }
+}
+
+class Average{
+  Queue<Integer>q;
+  int size;
+
+  Average(int size){
+    this.size = size;
+    q = new LinkedList<>();
+  }
+
+  double next(int value){
+    q.poll();
+    q.add(value);
+    if(q.size() > size){
+    }
+
+    int sum = 0;
+    
+    for(int num: q){
+      sum += num;
+    }
+    return (double)size/q.size();
+
+  }
+}

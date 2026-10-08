@@ -1,0 +1,79 @@
+// Online Java Compiler (Editor)
+// Write and run Java online using this editor.
+class Queue {
+    int[] arr;
+    int front;
+    int rear;
+    int size;
+
+
+    Queue(int size) {
+        this.size = size;
+        this.arr = new int[size];
+        this.front = 0;
+        this.rear = -1;
+    }
+
+    void enqueue(int data) {
+        if(rear == size -1) {
+            System.out.println("queue overflow");
+            return ;
+        }
+
+        rear++;
+        arr[rear] = data;
+    }
+    int dequeue() {
+        if(front > rear) {
+            System.out.println("queue underflow");
+            return -1;
+        }
+        int val = arr[front];
+        front++;
+        return val;
+    }
+
+    int peek(){
+        if(front > rear) {
+            System.out.println("queue underflow");
+            return -1;
+        }
+        int val = arr[front];
+        return val;
+    }
+
+    void display(){
+        if(front > rear) {
+            System.out.println("queue underflow");
+            return ;
+        }
+        for(int i = front;i<=rear;i++){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+    boolean isEmpty() {
+        if(rear==-1 || front == rear){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+}
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try clicking the Run button.");
+        Queue q = new Queue(5);
+        // q.enqueue(10);
+        // q.enqueue(20);
+        // q.enqueue(30);
+        // q.enqueue(40);
+        // q.enqueue(50);
+
+        // q.display();
+        System.out.println(q.isEmpty());
+        
+    }
+}

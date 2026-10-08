@@ -1,0 +1,103 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Node{
+    int data;
+    Node next;
+    Node prev;
+
+    Node(int d){
+        this.data=d;
+        this.next = null;
+        this.prev = null;
+    }
+}
+
+
+
+class Main {
+    public static void printForward(Node head){
+	if(head == null) return ;
+	
+	while(head!=null){
+		System.out.print(head.data + " ");
+		head=head.next;
+	}
+	
+};	
+    public static void printBackward(Node head){
+	while(head.next!=null){
+		head=head.next;
+	};
+	
+	while(head!=null) {
+		System.out.print(head.data + " ");
+		head=head.prev;
+	};
+};
+
+    public static Node insertFirst(Node head, int val){
+        if(head == null) return head;
+
+        Node temp = new Node(val);
+
+        temp.next=head;
+        head.prev = temp;
+
+        return temp;
+    }
+    public static Node deleteFirst(Node head) {
+        if(head == null) return head;
+
+        Node temp=head.next;
+        head.next=null;
+        temp.prev=null;
+
+        return  temp;
+    };
+
+    public static Node reverse(Node head){
+        Node curr = head;
+        Node newNode = null;
+        while(curr!=null){
+            Node temp= curr.prev;
+            curr.prev = curr.next;
+            curr.next = temp;
+            newNode = curr;
+            curr=curr.prev;
+        }
+        return newNode;
+    };
+    public static void main(String[] args) {
+        Node head = new Node(10);
+	Node first = new Node(20);
+ 	Node second = new Node(30);
+	Node third = new Node(40);
+	
+	head.next=first;
+	first.prev = head;
+	
+	first.next =second;
+	second.prev = first;
+
+	second.next = third;
+	third.prev=second;
+
+	printForward(head);
+	System.out.println();
+	printBackward(head);
+    
+
+    head=insertFirst(head,50);
+	System.out.println();
+    printForward(head);
+
+    head=deleteFirst(head);
+	System.out.println();
+    printForward(head);
+
+
+    Node reversed_head=reverse(head);
+    System.out.println();
+    printForward(reversed_head);
+    }
+}
